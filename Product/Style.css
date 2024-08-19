@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.sidebar {
+    width: 400px;
+    background-color: #99cac9;
+    padding: 30px;
+    flex-shrink: 0; 
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #def6ed;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+
+/* Active class styling */
+.sidebar ul li.active {
+    background-color: #19500c;
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.products {
+    flex-grow: 1;
+    background-color: #7bd536;
+    padding: 50px;
+    transition: background-color 0.3s ease;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.product-list {
+    display: none;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    width: 230px;
+    height: 200px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #75e999;
+    border: 1px solid #0a0a0a;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item img {
+    width: 85%;
+    height: 85%;
+    
+}
+
+.product-item.highlighted {
+    background-color: #fcfcfc;
+    color: #000000;
+    border-color: #b13887;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.product-item.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    }
+
+    .sidebar {
+        width: 350px;
+    }
+
+    .product-item {
+        width: calc(10% - 10px); /* Two products per row */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-item {
+        width: calc(25% - 10px); /* Three products per row */
+    }
+}
